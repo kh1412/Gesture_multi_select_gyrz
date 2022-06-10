@@ -5,145 +5,151 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-<android.support.wearable.view.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:id="@+id/watch_view_stub"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:padding="30dp"
-tools:context=".MainActivity"
-tools:deviceIds="wear">
 
+    <View
+        android:id="@+id/red_circle_view"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/shape_red_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-<FrameLayout
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:padding="2dp">
+    <View
+        android:id="@+id/pink_circle_view"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/shape_pink_icon"
+        app:layout_constraintBottom_toTopOf="@+id/red_circle_view"
+        app:layout_constraintCircle="@id/red_circle_view"
+        app:layout_constraintCircleAngle="0"
+        app:layout_constraintCircleRadius="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <View
+        android:id="@+id/purple_circle_view"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/shape_purple_icon"
+        app:layout_constraintCircle="@id/red_circle_view"
+        app:layout_constraintCircleAngle="30"
+        app:layout_constraintCircleRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <View
+        android:id="@+id/deep_purple_circle_view"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/shape_deep_purple_icon"
+        app:layout_constraintCircle="@id/red_circle_view"
+        app:layout_constraintCircleAngle="60"
+        app:layout_constraintCircleRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_gravity="top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="STARTを押して下さい"
-        android:textSize="8sp"
-        app:layout_box="all" />
+    <View
+        android:id="@+id/indigo_circle_view"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/shape_indigo_icon"
+        app:layout_constraintCircle="@id/red_circle_view"
+        app:layout_constraintCircleAngle="90"
+        app:layout_constraintCircleRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_gravity="top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:textSize="10sp"
-        app:layout_box="all" />
+    <View
+        android:id="@+id/blue_circle_view"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/shape_blue_icon"
+        app:layout_constraintCircle="@id/red_circle_view"
+        app:layout_constraintCircleAngle="120"
+        app:layout_constraintCircleRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/text2"
-        android:layout_gravity="top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="被験者名"
-        android:textSize="8sp"
-        app:layout_box="all" />
+    <View
+        android:id="@+id/light_blue_circle_view"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/shape_light_blue_icon"
+        app:layout_constraintCircle="@id/red_circle_view"
+        app:layout_constraintCircleAngle="150"
+        app:layout_constraintCircleRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/text3"
-        android:layout_gravity="top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:text="File Name"
-        android:textSize="8sp"
-        app:layout_box="all" />
+    <View
+        android:id="@+id/cyan_circle_view"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/shape_cyan_icon"
+        app:layout_constraintCircle="@id/red_circle_view"
+        app:layout_constraintCircleAngle="180"
+        app:layout_constraintCircleRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <View
+        android:id="@+id/teal_circle_view"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/shape_teal_icon"
+        app:layout_constraintCircle="@id/red_circle_view"
+        app:layout_constraintCircleAngle="210"
+        app:layout_constraintCircleRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_gravity="left"
-        android:layout_width="60dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="80dp"
-        android:text="START"
-        android:textSize="10sp"/>
+    <View
+        android:id="@+id/green_circle_view"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/shape_green_icon"
+        app:layout_constraintCircle="@id/red_circle_view"
+        app:layout_constraintCircleAngle="240"
+        app:layout_constraintCircleRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_gravity="right"
-        android:layout_width="60dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="80dp"
-        android:text="STOP"
-        android:textSize="10sp"/>
+    <View
+        android:id="@+id/light_green_circle_view"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/shape_light_green_icon"
+        app:layout_constraintCircle="@id/red_circle_view"
+        app:layout_constraintCircleAngle="270"
+        app:layout_constraintCircleRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/rt_box"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_weight="1"
-        android:layout_gravity="top|right"
-        android:background="#FFFFFF"
-        android:textColor="@color/black"
-        android:text="RT"
-        android:gravity="center"/>
+    <View
+        android:id="@+id/lime_circle_view"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/shape_lime_icon"
+        app:layout_constraintCircle="@id/red_circle_view"
+        app:layout_constraintCircleAngle="300"
+        app:layout_constraintCircleRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <View
+        android:id="@+id/yellow_circle_view"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/shape_yellow_icon"
+        app:layout_constraintCircle="@id/red_circle_view"
+        app:layout_constraintCircleAngle="330"
+        app:layout_constraintCircleRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 
-<TableLayout
-    android:layout_width="fill_parent"
-    android:layout_height="20dp"
-    android:layout_weight="1"
-    android:layout_gravity="bottom">
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="20dp">
-        <TextView
-            android:id="@+id/lb_box"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#0800FF"
-            android:textColor="@color/black"
-            android:text="LB"
-            android:gravity="center"/>
-        <TextView
-            android:id="@+id/ltw_box"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#FFFF00"
-            android:textColor="@color/black"
-            android:text="L_tw"
-            android:gravity="center"/>
-        <TextView
-            android:id="@+id/rtw_box"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#FF0000"
-            android:textColor="@color/black"
-            android:text="R_tw"
-            android:gravity="center"/>
-        <TextView
-            android:id="@+id/rb_box"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#00FF00"
-            android:textColor="@color/black"
-            android:text="RB"
-            android:gravity="center"/>
-    </TableRow>
-
-</TableLayout>
-
-</android.support.wearable.view.BoxInsetLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
 <!--
 <android.support.wearable.view.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
