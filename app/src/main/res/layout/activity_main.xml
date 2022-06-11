@@ -12,8 +12,8 @@
 
         <View
             android:id="@+id/center_view"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="@drawable/shape_red_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
