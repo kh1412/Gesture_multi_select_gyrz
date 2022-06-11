@@ -41,6 +41,7 @@ import java.util.*;
 import static java.sql.DriverManager.println;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.databinding.DataBindingUtil;
 
 import com.example.gesture_multi_select_gyrz.databinding.ActivityMainBinding;
@@ -52,6 +53,7 @@ public class MainActivity extends Activity implements SensorEventListener {
     private TextView mTextView;
     private TextView mTextView2;
     private TextView textView3;
+    private View circle_view00;
     private View lt_Box, rt_Box, lb_Box, rb_Box, ltw_Box, rtw_Box;
     private SensorManager mSensorManager;
     private Sensor acc_sensor;
@@ -130,7 +132,25 @@ public class MainActivity extends Activity implements SensorEventListener {
 
             TmpValue motion_val = new TmpValue();
 
+            Drawable drawable_defo = ResourcesCompat.getDrawable(getResources(), R.drawable.circle_white_icon, null);
+            Drawable drawable_selected = ResourcesCompat.getDrawable(getResources(), R.drawable.circle_selected, null);
+            circle_view00 = (View) findViewById(R.id.circle_view00);
 
+            while(true){
+                //現在時刻取得
+                cal.setTime(new Date());
+                sec = cal.get(Calendar.SECOND);
+                ss = cal.get(Calendar.MILLISECOND);
+
+                if(sec % 2 < 1){
+                    circle_view00.setBackground(drawable_defo);
+                }else{
+                    circle_view00.setBackground(drawable_selected);
+                }
+            }
+
+
+            /*
             while(button_flag == 1){
                 //現在時刻取得
                 cal.setTime(new Date());
@@ -290,6 +310,7 @@ public class MainActivity extends Activity implements SensorEventListener {
                     gyr_val = new Values();
                 }
             }
+            */
         }
     }
 
@@ -329,6 +350,20 @@ public class MainActivity extends Activity implements SensorEventListener {
             textView.setTextColor(Color.BLACK);
             root.addView(textView);
         }
+
+        Drawable drawable_defo = ResourcesCompat.getDrawable(getResources(), R.drawable.circle_white_icon, null);
+        Drawable drawable_selected = ResourcesCompat.getDrawable(getResources(), R.drawable.circle_selected, null);
+        circle_view00 = (View) findViewById(R.id.circle_view00);
+        circle_view00.setBackground(drawable_defo);
+        circle_view00.setBackground(drawable_selected);
+
+        //判別開始
+        starttime = System.currentTimeMillis();
+        button_flag = 1;
+
+        getValueThread thread1 = new getValueThread();
+        thread1.setPriority(8);
+        thread1.start();
     }
 
     //num of circle
