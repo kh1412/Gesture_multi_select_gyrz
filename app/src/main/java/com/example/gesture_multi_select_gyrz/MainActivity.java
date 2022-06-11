@@ -1,9 +1,15 @@
 package com.example.gesture_multi_select_gyrz;
 //import androidx.appcompat.app.AppCompatActivity;
 
+import static com.example.gesture_multi_select_gyrz.R.dimen.*;
+
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.DrawableContainer;
+import android.graphics.drawable.shapes.Shape;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -33,6 +39,13 @@ import java.util.TimeZone;
 import java.util.*;
 
 import static java.sql.DriverManager.println;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.databinding.DataBindingUtil;
+
+import com.example.gesture_multi_select_gyrz.databinding.ActivityMainBinding;
+
+//import androidx.databinding.DataBindingUtil;
 
 public class MainActivity extends Activity implements SensorEventListener {
     private final String TAG = MainActivity.class.getName();
@@ -280,13 +293,50 @@ public class MainActivity extends Activity implements SensorEventListener {
         }
     }
 
+    View position_view;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // recovering the instance state
         setContentView(R.layout.activity_main);
-
         mSensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
+
+
+        /*
+        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        position_view = (View)findViewById(R.id.pink_circle_view);
+        position_view.;
+         */
+
+        //num of circle
+        int num = 12;
+        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        ConstraintLayout root = binding.root;
+        View centralView = binding.centerView;
+        int radius = getResources().getDimensionPixelSize(circle_radius);
+        // 入力された数だけ等間隔に配置する
+        for (int i = 0; i < num; i++) {
+            TextView textView = new TextView(this);
+            ConstraintLayout.LayoutParams layoutParams = new ConstraintLayout.LayoutParams(
+                    ConstraintLayout.LayoutParams.WRAP_CONTENT,
+                    ConstraintLayout.LayoutParams.WRAP_CONTENT);
+            layoutParams.circleConstraint = centralView.getId(); // 基点になるViewを指定
+            layoutParams.circleAngle = computeAngle(num, i); // 角度を指定
+            layoutParams.circleRadius = radius; // 半径を指定(dp)
+            textView.setLayoutParams(layoutParams);
+            textView.setText(String.valueOf(i));
+            textView.setTextColor(Color.BLACK);
+            root.addView(textView);
+        }
+    }
+
+    //num of circle
+    private static final int CIRCLE_RADIUS = 360;
+
+    private float computeAngle(int num, int index) {
+        float angleUnit = (float) CIRCLE_RADIUS / num;
+        return angleUnit * index;
     }
 
     @Override
