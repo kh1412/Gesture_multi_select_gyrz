@@ -3,11 +3,11 @@
     <item android:state_focused="false" android:state_pressed="false">
         <shape xmlns:android="http://schemas.android.com/apk/res/android"
             android:shape="ring"
-            android:innerRadius="90dp"
+            android:innerRadius="70dp"
             android:thickness="20dp"
             android:useLevel="false">
             <size android:width="100dp" android:height="100dp"/>
-            <solid android:color="#6C83A5" />
+            <solid android:color="#4F607A" />
         </shape>
     </item>
 </selector>

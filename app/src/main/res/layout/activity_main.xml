@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-        <View
+        <TextView
             android:id="@+id/center_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -19,15 +19,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-        <View
+
+        <TextView
             android:id="@+id/center_view2"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
             android:background="@drawable/shape_black_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+            <!--
+            android:text="入力画面"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            -->
+
 
         <View
             android:id="@+id/circle_view00"
