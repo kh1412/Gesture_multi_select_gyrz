@@ -22,8 +22,8 @@
 
         <TextView
             android:id="@+id/center_view2"
-            android:layout_width="145dp"
-            android:layout_height="145dp"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
             android:background="@drawable/square_inner"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -32,8 +32,8 @@
 
         <TextView
             android:id="@+id/center_view3"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
             android:background="@drawable/square_center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
